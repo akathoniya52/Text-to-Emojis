@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore-compat.js"></script>
+  <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+</head>
+<body> 
+  <!-- all about the main section -->
+  <div class="flex h-[100%] w-[100%] justify-center ">
+    
+    <div class="main flex min-h-[100vh] h-[100%] w-[100%]  justify-center bg-[#201e1e] text-[white] sm:ml-[18%] sm:mr-[18%] sm:w-[60%] lg:w-[100wv]">
+      <div class="mt-[10%] max-w-[60%]  ">
+        <!-- text header -->
+        <h1 class="flex  justify-center  border-l-[2px] border-b-[2px]   text-[29px] font-[500]">
+          Text 
+          <p id="arrow" class="animate">&#8594;</p>
+          Emoji
+        </h1>
+        <p class="mt-[5%] mb-[5%]">keep your privacy encrypted...!</p>
+        <!-- top most button -->
+        <div class="mb-6 mt-[10%] flex justify-around  rounded bg-[#2a2929] p-1 text-[#aba9a9]">
+          <button id="dec-btn" class="m-2 rounded text-white bg-[#676666] p-2  font-[400] hover:text-[white]" onclick="btnClicking()" selected>Encrypt Text <i id="lockin" class=" fa m-1 text-white text-[#aba9a9] " style="font-size:20px;">&#xf023;</i></button>
+          <button id="enc-btn" onclick="dec()" class="m-2 rounded bg-[#676666] p-2 font-[400] hover:text-[white]">Decrypt Emojis <i id="lockopen" class="fa m-1 text-[#aba9a9] " style="font-size:20px;">&#xf13e;</i></button>
+        </div>
+        <!-- encryption -->
+        <p class="" id="error"></p>
+        <div id="decryption">
+          <h1 id="text" class="text-[#aba9a9]">1. Enter text for encrypted emojis.</h1>
+          <textarea onfocus="tex()"   name="text" id="txtmsg" cols="30" rows="2" placeholder="Enter your message  " class="m-1 w-[100%] rounded-md bg-[#676666] p-2"></textarea>
+  
+          <h1 class="text-[#aba9a9]">2. Set your password</h1>
+          <input id="pwd" type="password" class="m-1 mb-8 w-[100%] rounded-md bg-[#676666] p-2" placeholder="E.g. 12345" />
+  
+          <button class="m-2 w-[99%] rounded-md bg-[#676666] p-3 text-center text-[#aba9a9] hover:text-white" onclick="encryption()"> Encrypted text</button>
+          <!-- <h1 class=" text-white text-center mt-[30%]">By - Amit</h1> -->
+
+        </div>
+<!-- decryption  section-->
+        <div id="encryption" > 
+          <h1 class="text-[#aba9a9]">1. Please enter encrypted emojis.</h1>
+          <textarea name="" id="emoji" cols="30" rows="2" placeholder="Enter encrypted emojis e.g. 👭 👩 👴" class="m-1 w-[100%] rounded-md bg-[#676666] p-2"></textarea>
+  
+          <h1 class="text-[#aba9a9]">2. Type your password</h1>
+          <input type="password" id="pwd1" class="m-1 mb-8 w-[100%] rounded-md bg-[#676666] p-2" placeholder="E.g. 12345" />
+  
+          <button onclick="decryption()" class="m-2 w-[99%] rounded-md bg-[#676666] p-3 text-center text-[#aba9a9] hover:text-white">Decrypt Emojis</button>
+        </div>
+
+        <!-- <h1 class=" text-white text-center mt-[30%]">By - Amit</h1> -->
+        <div class="flex justify-center">
+          <div class="m-2 mt-6 min-w-[50%] min-h-[100%] max-h-[1000px]  rounded-md bg-[#676666] p-3 text-center text-white cursor-select"  id="result"></div>
+
+        </div>
+
+      </div>
+      
+    </div>
+    
+    
+  </div>
+  <script type="module" src="./app.js"></script>
+  <!-- <script src="./app.js"></script> -->
+  <!-- <script src="./jquery.js" type="js/jquery"></script> -->
+      
+</body>  
+<script>
+ 
+function tex(){
+  document.getElementById("text").classList.add("text-white");
+}
+ 
+
+</script>
+<script src="./app.js"></script>
+</html>
